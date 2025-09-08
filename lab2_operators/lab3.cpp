@@ -79,4 +79,37 @@ cout<<"n----- example 4: logical operator ---"<<endl;
 
  cout<<"\n----- EXERCISE-----"<<endl;
     return 0;
+
+    cout << boolalpha;  // show true/false instead of 0/1
+
+    int a, b;
+
+    // 1. Arithmetic Operations
+    cout << "Enter the first number (a): ";
+    cin >> a;
+    cout << "Enter the second number (b): ";
+    cin >> b;
+
+    cout << "\nArithmetic Operations:\n";
+    cout << "a + b = " << a + b << endl;
+    cout << "a - b = " << a - b << endl;
+    cout << "a * b = " << a * b << endl;
+    cout << "a / b = " << a / b << endl;
+    cout << "a % b = " << a % b << endl;
+
+    // 2. Assignment Operations
+    a += 10;   // increment a by 10
+    b -= 5;    // decrement b by 5
+    cout << "\nAfter assignment operations:\n";
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    // 3. Boolean (Logical) Operations
+    cout << "\nBoolean Operations:\n";
+    cout << "Is a greater than b? " << (a > b) << endl;
+    cout << "Is a equal to b? " << (a == b) << endl;
+    cout << "Is a not equal to b? " << (a != b) << endl;
+    cout << "Are both a and b positive numbers? " << ((a > 0) && (b > 0)) << endl;
+    cout << "Is either a or b a negative number? " << ((a < 0) || (b < 0)) << endl;
+    cout << "Is a not greater than b? " << (!(a > b)) << endl;
 }
