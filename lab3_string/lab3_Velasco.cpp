@@ -21,7 +21,7 @@ int main (){
 cout<<"\n ----- Example 3: concatenate character/s in a string"<<endl;
 string last_name = "pan";
 string username = "PP123";
-cout<<"\n concatnatedword="<<first_name + username"<<endl;
+cout<<"\n concatnated word ="<<first_name + last_name + username<<endl;
 cout<<"\n ---- Example 4: subtracting characters in a string ---"<<endl;
 string msg = "Today is a beautiful day!";
 // extract 5 charactersfrom the 3rd character
@@ -58,6 +58,23 @@ cout<<"\n -----Exserise---"<<endl;
 string word ="";
 cout<<"Enter a word:" ;
 cin>>word;
+ // ------ Lab 4 exercise -----
+
+// 1) print the 2nd character
+cout << "2nd character: " << word[1] << endl;
+
+// 2) print length of the word
+cout << "word has: " << word.length() << " characters" << endl;
+
+// 3) replace 2 characters from the 3rd character with "-- $ --"
+string replacedWord = word;
+replacedWord.replace(2, 2, "-- $ --");
+cout << "Replace word: " << replacedWord << endl;
+
+// 4) remove 3 characters from the end
+string removedWord = word;
+removedWord.erase(removedWord.length() - 3, 3);
+cout << "Remove end characters: " << removedWord << endl;
 
 return 0;
 }
