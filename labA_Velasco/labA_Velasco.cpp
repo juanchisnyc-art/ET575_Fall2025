@@ -1,8 +1,6 @@
 /*
 Juan Velasco
 September 9, 2025
-  Lab Exercise A – Leveraging AI as a C++ Coding Assistant (Part 1)
-  AI Assistant Used: ChatGPT
 */
 
 #include <iostream>
