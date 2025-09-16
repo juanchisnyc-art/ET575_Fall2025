@@ -8,6 +8,7 @@ lab 6, nested conditional statement and switch
 using namespace std;
 
 int main() {
+    // ---------------- Example 1 ----------------
     cout << "\n --- Example 1: nested condition ----" << endl;
     int n = 5;
 
@@ -27,19 +28,21 @@ int main() {
         cout << "The number is ZERO" << endl;
     }
 
+    // ---------------- Example 2 ----------------
     cout << "\n --- Example 2: organize three numbers in decreasing order ----" << endl;
     int num1, num2, num3;
-
     cout << "Enter three numbers: ";
     cin >> num1 >> num2 >> num3;
 
-    // sort so: num1 >= num2 >= num3
-    if (num1 < num2) swap(num1, num2);
-    if (num1 < num3) swap(num1, num3);
-    if (num2 < num3) swap(num2, num3);
+    // sort manually with a temp variable so num1 >= num2 >= num3
+    int temp;
+    if (num1 < num2) { temp = num1; num1 = num2; num2 = temp; }
+    if (num1 < num3) { temp = num1; num1 = num3; num3 = temp; }
+    if (num2 < num3) { temp = num2; num2 = num3; num3 = temp; }
 
     cout << "Decreasing order: " << num1 << "\t" << num2 << "\t" << num3 << endl;
 
+    // ---------------- Example 3 ----------------
     cout << "\n --- Example 3: switch (day-off) ----" << endl;
     int dayoff;
     cout << "Select a day-off:\n";
@@ -55,6 +58,7 @@ int main() {
         default: cout << "Unable to read the day-off" << endl; break;
     }
 
+    // ---------------- Example 4 ----------------
     cout << "\n --- Example 4: switch to select a gender ---" << endl;
     char gender;
     cout << "Select a gender (m/M = Male, f/F = Female, o/O = Others): ";
@@ -67,28 +71,49 @@ int main() {
         default:            cout << "Gender = UNDEFINED" << endl; break;
     }
 
+    // ================= Exercise 1 =================
     cout << "\n --- EXERCISE 1: Housing by savings ---" << endl;
     double savings;
     cout << "Enter the amount of money you have saved: ";
     cin >> savings;
 
     if (savings < 0) {
-        cout << "With $" << savings << " you are in debt. Keep saving!" << endl;
-    } else if (savings > 0 && savings < 200000) {
-        cout << "With $" << savings << " you need to keep saving!" << endl;
-    } else if (savings <= 500000) {
+        // Less than $0
+        cout << "With $" << savings << " Have some savings!" << endl;
+    } else if (savings >= 0 && savings <= 199999) {
+        // 0 to 199,999
+        cout << "With $" << savings << " Keep saving!" << endl;
+    } else if (savings >= 200000 && savings <= 500000) {
+        // Apartment or co-op with nested detail
         cout << "With $" << savings << " you can afford an Apartment or Co-op" << endl;
-        if (savings < 300000)       cout << "Type: Studio" << endl;
-        else if (savings < 400000)  cout << "Type: 1 Bedroom + 1 Bath" << endl;
-        else                        cout << "Type: 2 Bedrooms + 1 Bath" << endl;
-    } else if (savings <= 1000000) {
+
+        if (savings >= 200000 && savings <= 300000) {
+            // 200,000 to 300,000
+            cout << "Type: Studio" << endl;
+        } else if (savings >= 300001 && savings <= 400000) {
+            // 300,001 to 400,000
+            cout << "Type: 1 BR + 1 Bath" << endl;
+        } else if (savings >= 400001 && savings <= 500000) {
+            // 400,001 to 500,000
+            cout << "Type: 2 BRs + 1 Bath" << endl;
+        }
+    } else if (savings >= 500001 && savings <= 1000000) {
+        // House with nested detail
         cout << "With $" << savings << " you can afford a House" << endl;
-        if (savings < 700000)       cout << "Type: 2 Bedrooms + 2 Baths" << endl;
-        else                        cout << "Type: 3 Bedrooms + 3 Baths" << endl;
-    } else {
+
+        if (savings >= 500001 && savings <= 700000) {
+            // 500,001 to 700,000
+            cout << "Type: 2 BRs + 2 Baths" << endl;
+        } else if (savings >= 700001 && savings <= 1000000) {
+            // 700,001 to 1,000,000
+            cout << "Type: 3 BRs + 3 Baths" << endl;
+        }
+    } else if (savings >= 1000001) {
+        // 1,000,001 and up
         cout << "With $" << savings << " you can afford a Mansion" << endl;
     }
 
+    // ================= Exercise 2 =================
     cout << "\n --- EXERCISE 2: Switch-Case Double Number ---" << endl;
     int number;
     char choice;
@@ -100,9 +125,17 @@ int main() {
     cin >> choice;
 
     switch (choice) {
-        case 'Y': case 'y': number = number * 2; break;
-        case 'N': case 'n': /* keep the same */   break;
-        default:             number = 0;          break;
+        case 'Y':
+        case 'y':
+            number = number * 2; // double it
+            break;
+        case 'N':
+        case 'n':
+            // keep the same number
+            break;
+        default:
+            number = 0; // reset to zero
+            break;
     }
 
     cout << "The number is set to " << number << endl;
