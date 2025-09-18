@@ -31,12 +31,24 @@ int main()
  cout << "Given distance"<<distance<<endl;
  cout << "Given number = "<<number<<endl;
  
- cout <<"----- EXCERSIE ----"<<endl;
+    cout <<"----- EXCERSIE ----"<<endl;
+    string country; "canada";
+    char gender; "M";
+    int zipcode; 11427;
+    double rate; 2;
 
- string part1 = "Welcome to";
- string part2 = "New York City";
- cout<<" welcome to "<<part2<<endl;
+ cout<< "Enter coutry:";
+ cin >> country;
 
-    return 0;
+cout<< "Enter gender (f for female, m for male, o for others):";
+cin>> gender;
+
+cout<< "Enter zip code:";
+cin>> zipcode;
+
+cout<< "Enter tax rate:";
+cin>> rate;
+
+ 
+ return 0;
 }
-
