@@ -130,12 +130,12 @@ int main() {
             break;
         }
 
-        temp = (num < 0) ? -num : num; // handle negatives
+        temp = (num < 0) ? -num : num; 
         sum_digits = 0;
 
         while (temp > 0) {
-            sum_digits += temp % 10;   // add last digit
-            temp /= 10;                // remove last digit
+            sum_digits += temp % 10;   
+            temp /= 10;                
         }
 
         cout << "The sum of digits in " << num << " is " << sum_digits << "." << endl;
