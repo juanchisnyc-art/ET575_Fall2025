@@ -119,7 +119,7 @@ int main() {
     cout << "\nThe total sum of numbers = " << sum_all << endl;
 
     cout << "\n --- EXERCISE: Sum of digits repeatedly (0 to stop) ---" << endl;
-    // matches your professor's lab exercise
+
     int sum_digits, temp;
     do {
         cout << "Enter an integer (0 to stop): ";
