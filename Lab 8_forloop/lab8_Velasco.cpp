@@ -74,11 +74,17 @@ for(x ;x<=5;x++ ){
 
     cout << "\nTotal numbers that are multiples of 2: " << countEven << endl;
 
-
-
     cout<<"\n----- EXCERCISE 2 -----"<<endl;
-    int user_input = 0;
-    cout<<"Enter an initial value";
-    cin>>user_input;
+    int user_input = 0;      // variable for user start value
+cout << "Enter an initial value: ";
+cin >> user_input;
+
+// for loop: start at user_input, go up to 30, increment by 4
+for (int i = user_input; i <= 30; i += 4) {
+    cout << i << "\t";
+}
+
+cout << endl;  // print newline after loop output
+
     return 0;
 }
