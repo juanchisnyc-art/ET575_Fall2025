@@ -41,51 +41,53 @@ int main() {
     for (int row = 1; row <= dimension; row++) {
         for (int col = 1; col <= dimension; col++) {
             if (col==5||row==5)
-            cout<<"x";
+                cout<<"x";
             else
-            cout << " . ";
+                cout << " . ";
         }
         cout << endl;
     }
 
-cout << "\n--- Example 4: H graph ------" << endl;
-dimension = 10;
-for(int row = 1; row<dimension;row++){
-    for(int col = 1; row<=dimension; col++){
-        if((4 >= col && col>=3 && 8>=row>=3)||(col>=5 && col<=6 && row>=5 && row<=6)||(col>=7 && col<=8&& row>=3 && row<=8))
-            cout<<"%";
-        else
-            cout<<".";
+    cout << "\n--- Example 4: H graph ------" << endl;
+    dimension = 10;
+    for (int row = 1; row <= dimension; row++) {
+        for (int col = 1; col <= dimension; col++) {
+            if ( (col >= 3 && col <= 4 && row >= 3 && row <= 8) ||
+                 (col >= 5 && col <= 6 && row >= 5 && row <= 6) ||
+                 (col >= 7 && col <= 8 && row >= 3 && row <= 8) )
+                cout << "%";
+            else
+                cout << ".";
+        }
+        cout << endl;
     }
-    cout<<endl;
-}
 
-cout << "\n--- EXCERSISE  A ------" << endl;
-int sum = 0, count= 0;
-for (int n =20; n > 0; n -=2){
-    if(n%3==0){
-        count++;
-        continue;
+    cout << "\n--- EXCERSISE  A ------" << endl;
+    int sum = 0, count= 0;
+    for (int n =20; n > 0; n -=2){
+        if(n%3==0){
+            count++;
+            continue;
+        }
+        sum += n;
     }
-    sum += n;
-}
- cout<< "The sum is:"<<sum<<endl
-    <<"The count is:"<<count<<endl;
+    cout<< "The sum is:"<<sum<<endl
+        <<"The count is:"<<count<<endl;
 
-
-cout << "\n--- EXCERSISE  B ------" << endl;
-
-int i=0, add=0;
-    while(i<=10){
-        i++;
-        if(i<5 && i !=2){   
-            cout<<"i = "<<i<<endl;
+    cout << "\n--- EXERCISE  B -------" << endl;
+    {
+        int i = 0, add = 0;
+        while (i < 10) {
+            i++;
+            if (i < 5 && i != 2) {
+                cout << "i = " << i << endl;
+            } else {
+                continue;
             }
-        else{continue;}
-        add +=i;
+            add += i;
+        }
+        cout << "Add = " << add << endl;
     }
-    cout<<"Add = "<<add<<endl;
 
     return 0;
-
 }
