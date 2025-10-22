@@ -2,57 +2,67 @@
 Juan Velasco
 Lab 11, introduction to function
 */
-#include<iostream>
-
+#include <iostream>
+#include <string>
 using namespace std;
 
+void printhello() {
+    cout << "Hello function!" << endl;
+    return;
+}
 
-// void function does not return any value
-void printhello(){
-    cout<<"Hello function!"<<endl;
+void greeting(string name) {
+    cout << "Good afternoon " << name << endl;
     return;
 }
-// void function with parameters
-void greetings(string name){
-    cout<<"Good afternoon"<<name<<endl;
-    return;
-}
-//example 3, function that returns an integer (whole number)
-int returnfive(){
+
+int returnfive() {
     return 5;
 }
-//example 4, any(whole number)
 
+void printsome() {
+    cout << "This is printed before return." << endl;
+    return;
+}
 
-
-//example 5, function that calulates and returns the area of a float square
-float areasquare(float side){
-    float area = side*side;
+float areasquare(float side) {
+    float area = side * side;
     return area;
 }
 
-//example 6, function that calculates and returns the product of two numbers
-int product(int n1, int n2){
-    return n1*n2;
+int product(int n1, int n2) {
+    return n1 * n2;
 }
 
-// example 7, function that calculates and returns the farenheit temperature double
-double fah(double celcsius){
-    return celsius*1.8 +32;
+double fah(double celsius) {
+    return celsius * 1.8 + 32;
 }
 
-//example 8: check a number
-string checknumber(int number){
-    if(number==0){
+void printfah(double f) {
+    cout << "Fahrenheit temperature: " << f << endl;
+}
+
+string checknumber(int number) {
+    if (number == 0) {
         return "zero";
-    }
-    else if(number>0){
+    } else if (number > 0) {
         return "positive";
-    }
-    else{
+    } else {
         return "negative";
     }
 }
-void printnumber(string n){
-    cout<<"The number is " <<n <<endl;
+
+void printnumber(string n) {
+    cout << "The number is " << n << endl;
+}
+
+bool isEven(int number) {
+    if (number % 2 == 0)
+        return true;
+    else
+        return false;
+}
+
+void printResult(int number, bool result) {
+    cout << "Is " << number << " even? " << boolalpha << result << endl;
 }
