@@ -52,3 +52,22 @@ int product(int n1, int n2) {
 double fah(double celsius) {
     return celsius * 1.8 + 32;
 }
+
+void printfah(double f) {
+    cout << "The Fahrenheit temperature is: " << f << endl;
+}
+
+// Example 8: check a number
+string checknumber(int number) {
+    if (number == 0) {
+        return "zero";
+    } else if (number > 0) {
+        return "positive";
+    } else {
+        return "negative";
+    }
+}
+
+void printnumber(string n) {
+    cout << "The number is " << n << endl;
+}

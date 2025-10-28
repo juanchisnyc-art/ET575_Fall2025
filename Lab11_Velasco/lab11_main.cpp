@@ -42,6 +42,11 @@ int main() {
     cout << "\n ----- Example 7 calculate the farenheit temperature ----" << endl;
     double f = fah(12.5);
     cout << "The Farenheit temperature is: \t" << f << endl;
+
+    cout<<"\n ----- Example 8: check a number -----"<<endl;
+   
+    string checknum=checknumber(-1);
+    printnumber(checknum);
  
     return 0;
 }
