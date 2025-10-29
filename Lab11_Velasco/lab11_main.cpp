@@ -47,6 +47,9 @@ int main() {
    
     string checknum=checknumber(-1);
     printnumber(checknum);
+    print
+
+    cout<<"\n ----- EXCERCISE ----"<<endl;
  
     return 0;
 }

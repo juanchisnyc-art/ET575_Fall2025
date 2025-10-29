@@ -71,3 +71,5 @@ string checknumber(int number) {
 void printnumber(string n) {
     cout << "The number is " << n << endl;
 }
+
+
