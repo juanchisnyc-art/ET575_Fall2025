@@ -1,7 +1,3 @@
-Good morning1
-Good morning2
-Good morning3
-ET 575
-3
-2
-GAME OVER !
+Good morning 1
+Good morning 2
+Good morning 3

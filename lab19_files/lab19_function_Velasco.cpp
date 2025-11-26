@@ -1,136 +1,126 @@
-/**
- *Juan Velasco
- *Nov 24,2025
- *lab19,files and console input
- */
-#include<iostream>
-#include<fstream>
+/*
+Juan Velasco
+Nov 24, 2025
+Lab 19: Files and consle input
+*/
+
+#include <iostream>
+#include <fstream> // for file operations
 
 using namespace std;
 
-//example 1: console input failure
-// function to check if num is the proper data type
+// Example 1: Consle input failure
+// function to check if num values is the proper data type
 void checknumber(){
     int num;
-    cout<<"Enter a number:";
-    cin>>num;
+    cout << "Enter a number: ";
+    cin >> num;
 
-    if(cin.fail())
-    {cout<<"Error! input dismatched data type!"<<endl;
-    num = -1;
+    if (cin.fail()){
+        cout << "Error! input dismatched data type." << endl;
+        num = -1;
     }
-    else
-    
-    {cout<<"Entered number = "<<num<<endl;}
+    else{
+        cout << "You entered =  " << num << endl;
+    }
 
-    //clear the cin state
+    // clear the cin state
     cin.clear();
-    cin.ignore(10000,'\n');
+    cin.ignore(10000, '\n');
 
-    cout<<"END OF FUNCTION"<<endl;
+    cout << "END OF FUNCTION. Number = " << num << endl;
 }
 
-// example 2: console input to validate an input
-float validatenumber(){
+// example 2: console input to vaildate an input data type
+float vaidatenumber(){
     float n;
-    bool isNotValid = false;
+    bool isNotVaild = false;
 
     do{
-        cout<<"Enter a number: ";
-        cin>>n;
-        isNotValid = cin.fail();
+        cout << "Enter a number: ";
+        cin >> n;
+        isNotVaild = cin.fail();
         cin.clear();
-        cin.ignore(10000,'\n');
-    }while(isNotValid);
+        cin.ignore(10000, '\n');
+
+    }while(isNotVaild);
 
     return n;
 }
 
 // example 3: set object for input and output files
-ifstream fin;
-ofstream fout;
+ifstream fin; // declare input file as 'fin'
+ofstream fout; // declare output file as 'fout'
 
-void readfile(){
-    fin.open("samplefile.txt");
+void readfile(string filename){
+    fin.open(filename);
 
-    // variable 'line' is used to store each line of samplefile.txt
+    // varible 'line' is used to store each line of samplefile.txt
     string line;
-
-    // loop through each line in file samplefile.txt
+    
+    // loop through each line in samplefile.txt
     int linecounter = 1;
-    while(getline(fin,line)){
-        cout<<"Line"<<linecounter<<"\t"<<line<<endl;
-        linecounter ++;
+    while(getline(fin, line)){
+        cout << "Line " << linecounter << '\t' << line << endl;
+        linecounter++;
     }
 
     // close file
     fin.close();
 }
 
-// example 4: writing a file
-// fout will write in a new or exisitng file,fout over
+// Example 4: writing a file
+// fout will write in a new or existing file. fout overwrite all the content of an existing file.
 void writefile(string filename){
     fout.open(filename);
 
-    //write some content
-    for(int n = 1; n<=3; n++){
-        fout<<"Good morning"<<n<<endl;
+    // Write some content
+    for (int n = 1; n <= 3; n++){
+        fout << "Good day " << n << endl;
     }
-    
-   
-    fout<< "ET 575"<<endl;
 
-
-    //close the file
+    // close file
     fout.close();
-
 }
 
-// example 5: append data into a file
+// Example 5 : append data into a file
 void appendfile(string filename){
     fout.open(filename, ios::app);
 
     // append
-    for(int n = 3; n>1; n --){
-        fout<<n<<endl;
+    fout << "\n-----APPEND-----" << endl;
+    for (int n = 3; n > 0; n--){
+        fout << n << endl;
     }
-    //write a single line
-    fout<< "GAME OVER !"<<endl;
+    // Write a single line
+    fout << "chill" << endl;
 
     // close file
     fout.close();
-
-
-//Excersise lab 19
-
-// 1) Create a file and write one specific line
-void create_file() {
-    ofstream outfile("data_user.txt");
-    outfile << "This is my output file – Type your full name.\n";
-    outfile.close();
 }
 
-// 2) Append new message to the file
-void append_message(string new_msg) {
-    ofstream outfile("data_user.txt", ios::app);
-    outfile << new_msg << endl;
-    outfile.close();
+// EXERCISE:
+// Function 1: create a file named 'data_user.txt'
+void creatfile(string filename){
+    fout.open(filename);
+    fout << "This is my output file – Juan Velasco" << endl;
+    fout.close();
 }
 
-// 3) Read the file content and display on screen
-void read_file(string filename) {
-    ifstream infile(filename);
+// Function 2: append a new message to 'data_user.txt'
+void appendfile_exercise(string filename, string msg){
+    fout.open("data_user.txt", ios::app);
+    fout << msg << endl;
+    fout.close();
+}
+
+// Function 3: read and display the content of 'data_user.txt'
+void read_file_exercise(string filename){
+    fin.open(filename);
     string line;
 
-    if (!infile) {
-        cout << "Error opening the file!" << endl;
-        return;
-    }
-
-    while (getline(infile, line)) {
+    while(getline(fin, line)){
         cout << line << endl;
     }
-
-    infile.close();
-
+    fin.close();
 }
