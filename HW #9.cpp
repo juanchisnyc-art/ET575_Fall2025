@@ -61,9 +61,6 @@ void reverse(int noise[], int s) {
     }
 }
 
-// ------------------------------
-// MAIN (must match professor’s version)
-// ------------------------------
 int main() {
     int sizearray = arraysize();   // Get array size
     int noise[sizearray];          // Create array
